@@ -29,13 +29,9 @@ func multiply(a int, b int) int {
 
 func main() {
 	var x, y, z, w int
-	fmt.Print("1つ目の数字を入力してください: ")
 	fmt.Scan(&x)
-	fmt.Print("2つ目の数字を入力してください: ")
 	fmt.Scan(&y)
-	fmt.Print("3つ目の数字を入力してください: ")
 	fmt.Scan(&z)
-	fmt.Print("4つ目の数字を入力してください: ")
 	fmt.Scan(&w)
 
 	sum := add(x, y)
