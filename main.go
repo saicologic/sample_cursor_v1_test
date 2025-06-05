@@ -2,8 +2,14 @@ package main
 
 import "fmt"
 
+// 足し算する
 func add(a int, b int) int {
-	return a - b
+	return a + b
+}
+
+// 掛け算する
+func multiply(a int, b int) int {
+	return a * b
 }
 
 func main() {
