@@ -17,6 +17,11 @@ func subtract(a int, b int) int {
 	return a - b
 }
 
+// 3つの数字を引き算する
+func subtractThree(a int, b int, c int) int {
+	return a - b - c
+}
+
 // 掛け算する
 func multiply(a int, b int) int {
 	return a * b
@@ -47,6 +52,7 @@ func main() {
 	sum := add(x, y)
 	sumThree := addThree(x, y, z)
 	difference := subtract(x, y)
+	differenceThree := subtractThree(x, y, z)
 	product := multiply(x, y)
 	quotient, err := divide(x, y)
 	quotientThree := divideThree(x, y, z)
@@ -54,6 +60,7 @@ func main() {
 	fmt.Printf("合計: %d\n", sum)
 	fmt.Printf("3つの数字の合計: %d\n", sumThree)
 	fmt.Printf("差: %d\n", difference)
+	fmt.Printf("3つの数字の差: %d\n", differenceThree)
 	fmt.Printf("積: %d\n", product)
 
 	if err != nil {
