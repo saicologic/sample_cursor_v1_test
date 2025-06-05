@@ -30,6 +30,14 @@ func divide(a int, b int) (float64, error) {
 	return float64(a) / float64(b), nil
 }
 
+// 3つの数字を割り算する
+func divideThree(a int, b int, c int) (float64, error) {
+	if b == 0 || c == 0 {
+		return 0, fmt.Errorf("0で割ることはできません")
+	}
+	return float64(a) / float64(b) / float64(c), nil
+}
+
 func main() {
 	var x, y, z int
 	fmt.Print("1つ目の数字を入力してください: ")
@@ -44,6 +52,7 @@ func main() {
 	difference := subtract(x, y)
 	product := multiply(x, y)
 	quotient, err := divide(x, y)
+	quotientThree, errThree := divideThree(x, y, z)
 
 	fmt.Printf("合計: %d\n", sum)
 	fmt.Printf("3つの数字の合計: %d\n", sumThree)
@@ -54,5 +63,11 @@ func main() {
 		fmt.Printf("商: エラー - %s\n", err.Error())
 	} else {
 		fmt.Printf("商: %.2f\n", quotient)
+	}
+
+	if errThree != nil {
+		fmt.Printf("3つの数字の商: エラー - %s\n", errThree.Error())
+	} else {
+		fmt.Printf("3つの数字の商: %.2f\n", quotientThree)
 	}
 }
