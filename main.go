@@ -17,6 +17,11 @@ func subtract(a int, b int) int {
 	return a - b
 }
 
+// 3つの数字を引き算する
+func subtractThree(a int, b int, c int) int {
+	return a - b - c
+}
+
 // 掛け算する
 func multiply(a int, b int) int {
 	return a * b
