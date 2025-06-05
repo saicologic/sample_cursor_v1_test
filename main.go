@@ -17,18 +17,33 @@ func multiply(a int, b int) int {
 	return a * b
 }
 
+// 割り算する
+func divide(a int, b int) (int, error) {
+	if b == 0 {
+		return 0, fmt.Errorf("ゼロで割ることはできません")
+	}
+	return a / b, nil
+}
+
 func main() {
 	var x, y int
 	fmt.Print("1つ目の数字を入力してください: ")
 	fmt.Scan(&x)
 	fmt.Print("2つ目の数字を入力してください: ")
 	fmt.Scan(&y)
-	
+
 	sum := add(x, y)
 	difference := subtract(x, y)
 	product := multiply(x, y)
-	
+	quotient, err := divide(x, y)
+
 	fmt.Printf("合計: %d\n", sum)
 	fmt.Printf("差: %d\n", difference)
 	fmt.Printf("積: %d\n", product)
+
+	if err != nil {
+		fmt.Printf("商: %s\n", err.Error())
+	} else {
+		fmt.Printf("商: %d\n", quotient)
+	}
 }
