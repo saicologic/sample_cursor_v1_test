@@ -22,6 +22,14 @@ func multiply(a int, b int) int {
 	return a * b
 }
 
+// 割り算する
+func divide(a int, b int) (float64, error) {
+	if b == 0 {
+		return 0, fmt.Errorf("0で割ることはできません")
+	}
+	return float64(a) / float64(b), nil
+}
+
 func main() {
 	var x, y, z int
 	fmt.Print("1つ目の数字を入力してください: ")
@@ -35,9 +43,16 @@ func main() {
 	sumThree := addThree(x, y, z)
 	difference := subtract(x, y)
 	product := multiply(x, y)
+	quotient, err := divide(x, y)
 
 	fmt.Printf("合計: %d\n", sum)
 	fmt.Printf("3つの数字の合計: %d\n", sumThree)
 	fmt.Printf("差: %d\n", difference)
 	fmt.Printf("積: %d\n", product)
+
+	if err != nil {
+		fmt.Printf("商: エラー - %s\n", err.Error())
+	} else {
+		fmt.Printf("商: %.2f\n", quotient)
+	}
 }
