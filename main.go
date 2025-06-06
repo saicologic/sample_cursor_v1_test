@@ -12,6 +12,10 @@ func addThree(a int, b int, c int) int {
 	return a + b + c
 }
 
+func addFour(a int, b int, c int, d int) int {
+	return a + b + c
+}
+
 // 引き算する
 func subtract(a int, b int) int {
 	return a - b
