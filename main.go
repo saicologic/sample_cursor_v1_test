@@ -9,7 +9,7 @@ func add(a int, b int) int {
 
 // 3つの数字を足し算する
 func addThree(a int, b int, c int) int {
-	return a + b + c
+	return a + b
 }
 
 func addFour(a int, b int, c int, d int) int {
